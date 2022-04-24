@@ -7,7 +7,6 @@
           <router-view />
         </transition>
       </div>
-      <!-- <Players v-else /> -->
     </transition>
   </div>
 </template>
@@ -15,26 +14,21 @@
 <script>
 import { 
   mapState, 
-  // mapGetters 
 } from 'vuex';
 
-import Navbar from '@atoms/Navbar';
-// import Players from '@molecules/Players';
+import Navbar from '../src/components/Navbar.vue';
 
 export default {
   name: 'TicTacVue',
   components: {
     Navbar,
-    // Players,
   },
   
   computed: {
     ...mapState([
       'gameHistory'
     ]),
-    // ...mapGetters([
-    //   'hasPlayers'
-    // ])
+   
   }
 };
 </script>

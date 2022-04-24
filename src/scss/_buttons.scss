@@ -2,7 +2,9 @@
   font-size: 1rem;
   padding: 6px 10px;
   border-radius: 2px;
+  background-color: $secondary-color;
   color: $color-white;
+
   outline: none;
   cursor: pointer;
   border-width: 1px;
@@ -13,28 +15,7 @@
     cursor: not-allowed;
   }
 
-  &--small {
-    padding: 3px 6px;
-  }
+ 
 
-  &--primary,
-  &--error {
-    @include border-background($primary-color)
-  }
-
-  &--secondary {
-    @include border-background($secondary-color)
-  }
-
-  &--golden {
-    color: $color-dark;
-    @include border-background($golden-color);
-
-    &:hover {
-      &::after {
-        content: '';
-        color: red;
-      }
-    }
-  }
+  
 }

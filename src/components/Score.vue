@@ -12,6 +12,11 @@
 <script>
 export default {
   name: 'Score',
+  data() {
+    return {
+      winnersLocal : ''
+    }
+  },
   props: {
     game: {
       type: Object,
@@ -19,7 +24,10 @@ export default {
     },
     
   },
-  
+  // mounted() {
+  //   if(localStorage())
+
+  // },
   computed: {
     // isGoldenWin() {
     //   return this.game.isGoldenWin;

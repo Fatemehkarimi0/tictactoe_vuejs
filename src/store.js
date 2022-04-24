@@ -4,31 +4,25 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const emptyPositions = () => [null, null, null, null, null, null, null, null, null];
-const players = () => ['x', 'o'];
+const players =  {X:'X',O:'O'};
 export default new Vuex.Store({
   state: {
     player: "X",
     winner: null,
-    players: players(),
+    players: players,
     gameHistory: [],
     positions: emptyPositions(),
   },
   getters: {
-    // hasPlayers: state => state.players,
     getMarker: state => index => state.positions[index],
     getPlayerName: state => state.players ? state.players[state.player] : '',
     getWinnerName: state => state.winner ? state.players[state.winner] : '',
     hasEmptyCells: state => {
       return state.positions.filter(position => !!position).length < 9;
     },
-    // hasGoldenWins: state => {
-    //   return state.gameHistory.filter(game => game.isGoldenWin).length > 0;
-    // }
+    
   },
   mutations: {
-    // setPlayers(state, payload) {
-    //   state.players = payload;
-    // },
     changePlayer(state) {
       state.player = state.player === 'X' ? 'O' : 'X';
     },
@@ -56,7 +50,6 @@ export default new Vuex.Store({
           winner: state.winner,
           positions: state.positions,
           winnerName: state.players[state.winner],
-          // isGoldenWin: state.positions.filter(position => !!position).length === 5,
         }));
       }
     },

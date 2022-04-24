@@ -11,8 +11,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        "@atoms": path.resolve(__dirname, 'src/components/atoms/'),
-        "@molecules": path.resolve(__dirname, 'src/components/molecules/'),
+        "@components": path.resolve(__dirname, 'src/components/'),
         "@pages": path.resolve(__dirname, 'src/pages/'),
       }
     }

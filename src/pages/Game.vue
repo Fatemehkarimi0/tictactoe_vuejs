@@ -1,7 +1,12 @@
 <template>
   <div class="page-game">
-        <GameHistory />
-
+    <div class="container">
+<Score v-for="(game, index) in games" 
+              :key="index" 
+              :game="game"
+        />
+    </div>
+     
 
     <Cells :positions="positions" />
     <div class="container">
@@ -40,14 +45,13 @@ import {
   mapGetters,
 } from 'vuex';
 
-import Title from '@atoms/Title';import Cells from '@molecules/Cells';
-import GameHistory from '@/pages/GameHistory'
+import Cells from '../components/Cells.vue';
+import Score from '../components/Score.vue';
 export default {
   name: 'Game',
   components: {
     Cells,
-    Title,
-    GameHistory
+    Score
   },
 
   computed: {
@@ -55,13 +59,20 @@ export default {
       'player',
       'winner',
       'positions',
+            'gameHistory',
+
     ]),
 
     ...mapGetters([
       'getPlayerName',
       'getWinnerName',
       'hasEmptyCells',
+
     ]),
+   
+    games() {
+      return this.gameHistory;
+    }
   },
   
   beforeCreate() {

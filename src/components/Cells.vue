@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Cell from '@atoms/Cell';
+import Cell from './Cell';
 
 export default {
   name: 'Cells',
