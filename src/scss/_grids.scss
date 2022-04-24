@@ -1,0 +1,35 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: $container-width;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.is-full-width {
+  width: 100%;
+}
+
+.flex {
+  &-container {
+    display: flex;
+
+    &--100vh {
+      height: 100vh;
+    }
+  }
+
+  &--v-centered {
+    align-self: center;
+  }
+}

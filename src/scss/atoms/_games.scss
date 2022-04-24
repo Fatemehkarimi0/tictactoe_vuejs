@@ -1,0 +1,29 @@
+.games {
+  padding-left: 0;
+
+  .game {
+    padding: 7px;
+    list-style-type: none;
+    border: 1px solid $color_light_grey;
+  
+    + .game {
+      border-top: 0;
+    }
+  
+    &__winner{
+      display: inline-block
+    }
+    &__cta {
+      display: none
+    }
+  
+    &__winner {
+      width: 60%;
+    }
+  
+    &__cta {
+      width: 40%;
+      text-align: right;
+    }
+  }
+}
